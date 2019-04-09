@@ -23717,6 +23717,9 @@ llvm_require_version() {
     llvm_target_version_major=`echo $1 | cut -d. -f1 | egrep -o '^[0-9]+'`
     llvm_target_version_minor=`echo $1 | cut -d. -f2 | egrep -o '^[0-9]+'`
     llvm_target_version_patch=`echo $1 | cut -d. -f3 | egrep -o '^[0-9]+'`
+    echo "$LLVM_VERSION_MAJOR" "$llvm_target_version_major"
+    echo "$LLVM_VERSION_MINOR" "$llvm_target_version_minor"
+    echo "$LLVM_VERSION_PATCH" "$llvm_target_version_patch"
 
     if test "$LLVM_VERSION_MAJOR" -gt "$llvm_target_version_major"; then
         # major > required major
